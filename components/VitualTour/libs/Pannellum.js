@@ -247,9 +247,9 @@ const Pannellum = (function (window, document, undefined) {
     var customControl = document.createElement("div");
     customControl.id = "controls";
     customControl.innerHTML = `
-      <div class="ctrl" id="zoom-in"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-      <div class="ctrl" id="zoom-out"><i class="fa-solid fa-magnifying-glass-minus"></i></div>
-      <div class="ctrl" id="fullscreen"><i class="fa-solid fa-expand"></i></div>
+      <div class="ctrl" id="zoom-in">&plus;</div>
+      <div class="ctrl" id="zoom-out">&minus;</div>
+      <div class="ctrl" id="fullscreen">&#x2922;</div>
     `;
     uiContainer.appendChild(customControl);
 
