@@ -21,7 +21,7 @@ const VitualTour = (props: Props) => {
   React.useEffect(() => {
     const viewer = Pannellum.viewer(pannellumRef.current, {
       default: {
-        firstScene: "house",
+        firstScene: "home",
         sceneFadeDuration: 1000,
         autoLoad: true,
         showControls: false,
@@ -75,8 +75,28 @@ const VitualTour = (props: Props) => {
               yaw: 37.1,
               type: "scene",
               text: "Mason Circle",
+              sceneId: "home",
+              draggable: true,
+            },
+          ],
+        },
+        home: {
+          hfov: 300,
+          pitch: 13.827447381555467,
+          yaw: 117.75064961832777,
+          type: "equirectangular",
+          panorama:
+            "https://thumbs.dreamstime.com/b/snowy-mountains-panorama-4347925.jpg",
+          hotSpots: [
+            {
+              pitch: -13.6,
+              yaw: 38.1,
+              type: "custom",
+              text: "Lê quang vinh",
               sceneId: "house",
               draggable: true,
+              rotateX: 65,
+              rotateZ: 315,
             },
           ],
         },

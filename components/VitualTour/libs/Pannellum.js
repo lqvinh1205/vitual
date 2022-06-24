@@ -2303,12 +2303,21 @@ const Pannellum = (function (window, document, undefined) {
       // Make sure hot spot pitch and yaw are numbers
       hs.pitch = Number(hs.pitch) || 0;
       hs.yaw = Number(hs.yaw) || 0;
+      hs.rotateX = Number(hs.rotateX) || 0;
+      hs.rotateZ = Number(hs.rotateZ) || 0;
 
       var div = document.createElement("div");
       div.className = "pnlm-hotspot-base";
-      if (hs.cssClass) div.className += " " + hs.cssClass;
+      var divContent = document.createElement("div");
+      div.appendChild(divContent);
+      if (hs.rotateX || hs.rotateZ) {
+        divContent.style.transform = `rotateX(${hs.rotateX + "deg"}) rotateZ(${
+          hs.rotateZ + "deg"
+        })`;
+      }
+      if (hs.cssClass) divContent.className += " " + hs.cssClass;
       else
-        div.className +=
+        divContent.className +=
           " pnlm-hotspot pnlm-sprite pnlm-" + escapeHTML(hs.type);
 
       var span = document.createElement("span");
@@ -2386,7 +2395,7 @@ const Pannellum = (function (window, document, undefined) {
         span.style.width = span.scrollWidth - 20 + "px";
         span.style.marginLeft =
           -(span.scrollWidth - div.offsetWidth) / 2 + "px";
-        span.style.marginTop = -span.scrollHeight - 12 + "px";
+        span.style.marginTop = -span.scrollHeight - 52 + "px";
       }
       if (hs.clickHandlerFunc) {
         div.addEventListener(
